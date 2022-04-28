@@ -1215,7 +1215,7 @@
           "networkProfile": {
             "networkPlugin": "azure",
             "networkPolicy": "azure",
-            "loadBalancerSku": "Basic",
+            "loadBalancerSku": "Standard",
             "outboundType": "loadBalancer",
             "loadBalancerProfile": {
               "managedOutboundIPs": {
