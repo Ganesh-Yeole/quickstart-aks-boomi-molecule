@@ -1217,16 +1217,6 @@
             "networkPolicy": "azure",
             "loadBalancerSku": "Standard",
             "outboundType": "userAssignedNATGateway",
-            "loadBalancerProfile": {
-              "managedOutboundIPs": {
-                "count": 1
-              },
-              "effectiveOutboundIPs": [
-                {
-                  "id": "[variables('aksLoadBalancerPublicIpAddressId')]"
-                }
-              ]
-            },
             "podCidr": "[parameters('aksClusterPodCidr')]",
             "serviceCidr": "[parameters('aksClusterServiceCidr')]",
             "dnsServiceIP": "[parameters('aksClusterDnsServiceIP')]",
