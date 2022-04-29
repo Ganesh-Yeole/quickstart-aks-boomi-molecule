@@ -1216,7 +1216,7 @@
             "networkPlugin": "azure",
             "networkPolicy": "azure",
             "loadBalancerSku": "Standard",
-            "outboundType": "loadBalancer",
+            "outboundType": "userAssignedNATGateway",
             "loadBalancerProfile": {
               "managedOutboundIPs": {
                 "count": 1
