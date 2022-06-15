@@ -765,7 +765,7 @@
       {
         "name": "[variables('volumeName')]",
         "type": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes",
-        "apiVersion": "2020-11-01",
+        "apiVersion": "2021-04-01",
         "location": "[resourceGroup().location]",
         "dependsOn": [
           "[variables('capacityPoolId')]",
