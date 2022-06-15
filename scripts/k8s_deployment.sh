@@ -286,7 +286,7 @@ spec:
               name: boomi-secret
               key: password
         - name: CONTAINER_PROPERTIES_OVERRIDES
-          value: "com.boomi.container.debug=false|com.boomi.deployment.quickstart=true"
+          value: "com.boomi.container.debug=false|com.boomi.deployment.quickstart=true|com.boomi.container.elasticity.asyncPollerTimeout=75000|com.boomi.container.elasticity.forceRestartOverride=50000"
 EOF
 
 cat >/tmp/statefulset_token.yaml <<EOF
