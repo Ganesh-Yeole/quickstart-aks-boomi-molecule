@@ -786,7 +786,7 @@
                 "nfsv3": true,
                 "nfsv41": false,
                 "chownMode": "Unrestricted",
-                "allowedClients":6 "[parameters('virtualNetworkAddressPrefixes')]"
+                "allowedClients": "[parameters('virtualNetworkAddressPrefixes')]"
               }
             ]
           },
