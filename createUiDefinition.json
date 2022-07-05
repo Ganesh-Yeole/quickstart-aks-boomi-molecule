@@ -435,7 +435,6 @@
                         "type": "Microsoft.Common.TextBox",
                         "label": "Boomi User name",
                         "toolTip": "The email account associated with the Boomi account.",
-                        "defaultValue": "",
                         "constraints": {
                             "required": true
                         }
@@ -476,7 +475,6 @@
                         "type": "Microsoft.Common.TextBox",
                         "label": "Boomi Account ID",
                         "toolTip": "The Boomi account ID that you want to associate with the new Molecule cluster.",
-                        "defaultValue": "",
                         "constraints": {
                             "required": true
                         }
@@ -497,10 +495,8 @@
         "outputs":
          {
             "location": "[location()]",
-            
             "virtualMachineAdminUsername": "[basics('virtualMachineAdminUsername')]",
             "virtualMachineAdminPassword": "[basics('virtualMachineAdminPassword')]",
-
             "virtualNetworkAddressPrefixes": "[steps('AzureInfrastructureConfig').virtualNetworkAddressPrefixes]",
             "aksSubnetAddressPrefix": "[steps('AzureInfrastructureConfig').aksSubnetAddressPrefix]",
             "applicationGatewaySubnetAddressPrefix": "[steps('AzureInfrastructureConfig').applicationGatewaySubnetAddressPrefix]",
@@ -510,7 +506,6 @@
             "virtualMachineSize": "[steps('AzureInfrastructureConfig').virtualMachineSize]",
             "netAppServiceLevel": "[steps('AzureInfrastructureConfig').netAppServiceLevel]",
             "sslCertificateSecretData": "[steps('AzureInfrastructureConfig').sslCertificateSecretData]",
-
             "aksClusterKubernetesVersion": "[steps('KubernetesConfig').aksClusterKubernetesVersion]",
             "aksClusterEnablePrivateCluster": "[steps('KubernetesConfig').aksClusterEnablePrivateCluster]",
             "aksClusterSkuTier": "[steps('KubernetesConfig').aksClusterSkuTier]",
@@ -520,21 +515,13 @@
             "aksClusterDnsServiceIP": "[steps('KubernetesConfig').aksClusterDnsServiceIP]",
             "aksClusterPodCidr": "[steps('KubernetesConfig').aksClusterPodCidr]",
             "aksClusterDockerBridgeCidr": "[steps('KubernetesConfig').aksClusterDockerBridgeCidr]",
-
             "aksNodePoolAvailabilityZones": "[if(equals(steps('KubernetesConfig').aksNodePoolAvailabilityZones, '1'), parse(concat('[\"', steps('KubernetesConfig').aksNodePoolAvailabilityZones,'\"]')), steps('KubernetesConfig').aksNodePoolAvailabilityZones)]",
-            
-          
             "userNodePoolAgentCount": "[steps('KubernetesConfig').userNodePoolAgentCount]",
             "userNodePoolMinCount": "[steps('KubernetesConfig').userNodePoolMinCount]",
             "userNodePoolMaxCount": "[steps('KubernetesConfig').userNodePoolMaxCount]",
-           
             "PodCPUSize": "[steps('KubernetesConfig').PodCPUSize]",
             "PodMemorySize": "[steps('KubernetesConfig').PodMemorySize]",
             "PersistentVolumeSize": "[steps('KubernetesConfig').PersistentVolumeSize]",
-            
-  
-
-
             "BoomiAuthenticationType": "[steps('BoomiConfig').BoomiAuthenticationType]",
             "BoomiAccountID": "[steps('BoomiConfig').BoomiAccountID]",
             "BoomiUsername": "[steps('BoomiConfig').BoomiUsername]",
