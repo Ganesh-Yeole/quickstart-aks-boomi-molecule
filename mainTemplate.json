@@ -273,8 +273,8 @@
       }
   },
   "variables": {
-        "nestedtemplateUri1": "[uri(parameters('_artifactsLocation'), concat('nestedtemplates/azuredeploy.license.validation.json', parameters('_artifactsLocationSasToken')))]",
-        "nestedtemplateUri2": "[uri(parameters('_artifactsLocation'), concat('nestedtemplates/azuredeploy.license.check.json', parameters('_artifactsLocationSasToken')))]"
+        "nestedtemplateUri1": "[uri(parameters('_artifactsLocation'), concat('template/azuredeploy.license.validation.json', parameters('_artifactsLocationSasToken')))]",
+        "nestedtemplateUri2": "[uri(parameters('_artifactsLocation'), concat('template/azuredeploy.license.check.json', parameters('_artifactsLocationSasToken')))]"
    },
   "resources": [
     {
