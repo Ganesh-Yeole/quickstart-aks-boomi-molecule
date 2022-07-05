@@ -765,7 +765,7 @@
                 "cifs": false,
                 "nfsv3": true,
                 "nfsv41": false,
-                "chownMode": "Unrestricted",
+                "chownMode": "Restricted",
                 "allowedClients": "[parameters('virtualNetworkAddressPrefixes')]"
               }
             ]
@@ -779,7 +779,7 @@
       },
       {
         "type": "Microsoft.KeyVault/vaults",
-        "apiVersion": "2022-02-01-preview",
+        "apiVersion": "2022-01-01-preview",
         "name": "[variables('keyVaultName')]",
         "location": "[resourceGroup().location]",
         "dependsOn": [
@@ -900,7 +900,7 @@
       },
       {
         "type": "Microsoft.Network/applicationGateways",
-        "apiVersion": "2022-01-01",
+        "apiVersion": "2020-11-01",
         "name": "[variables('applicationGatewayName')]",
         "location": "[resourceGroup().location]",
         "dependsOn": [
