@@ -1077,7 +1077,7 @@
       },
       {
         "type": "Microsoft.ContainerService/managedClusters",
-        "apiVersion": "2022-05-02-preview",
+        "apiVersion": "2021-10-01",
         "name": "[variables('aksClusterName')]",
         "location": "[resourceGroup().location]",
         "sku": {
@@ -1225,7 +1225,7 @@
       {
         "name": "[concat(variables('aksClusterName'), '/systempool')]",
         "type": "Microsoft.ContainerService/managedClusters/agentPools",
-        "apiVersion": "2022-05-02-preview",
+        "apiVersion": "2021-10-01",
         "dependsOn": [
           "[variables('aksClusterId')]"
         ],
@@ -1259,7 +1259,7 @@
       {
         "name": "[concat(variables('aksClusterName'), '/userpool')]",
         "type": "Microsoft.ContainerService/managedClusters/agentPools",
-        "apiVersion": "2022-05-02-preview",
+        "apiVersion": "2021-10-01",
         "dependsOn": [
           "[variables('aksClusterId')]"
         ],
