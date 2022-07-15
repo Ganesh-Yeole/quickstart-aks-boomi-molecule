@@ -11,9 +11,7 @@
                 "label": "Username",
                 "toolTip": "Specifies the name of the administrator account of the virtual machine.",
                 "constraints": {
-                    "required": true,
-                    "regex": "^.+@.+$",
-                    "validationMessage": "The AtomSphere user name must be an email address"
+                    "required": true
                 }
             },
             {
@@ -438,7 +436,10 @@
                         "label": "Boomi User name",
                         "toolTip": "The email account associated with the Boomi account.",
                         "constraints": {
-                            "required": true
+                            "required": true,
+                            "regex": "^.+@.+$",
+                            "validationMessage": "The AtomSphere user name must be an email address"
+                            
                         }
                         
                     },
