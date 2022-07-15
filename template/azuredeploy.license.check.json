@@ -258,6 +258,12 @@
     "sslCertificateSecretData": {
       "type": "securestring"
     },
+    "location": {
+      "type": "string",
+      "metadata": {
+        "description": "Location"
+      }
+    },
     "_artifactsLocation": {
       "type" : "string",
       "metadata" : {
@@ -380,6 +386,9 @@
           },
           "sslCertificateSecretData": {
             "value": "[parameters('sslCertificateSecretData')]"
+          },
+           "location" :{
+            "value": "[parameters('location')]"
           },
           "_artifactsLocation" :{
             "value": "[parameters('_artifactsLocation')]"
