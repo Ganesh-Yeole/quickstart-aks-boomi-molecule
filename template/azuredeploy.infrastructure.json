@@ -128,13 +128,6 @@
           "description": "Specifies whether enabling AAD integration."
         }
       },
-      "aadProfileAdminGroupObjectIDs": {
-        "defaultValue": [],
-        "type": "array",
-        "metadata": {
-          "description": "Specifies the AAD group object IDs that will have admin role of the cluster."
-        }
-      },
       "aadProfileManaged": {
         "defaultValue": false,
         "type": "bool",
@@ -171,7 +164,6 @@
         }
       },
       "aksNodePoolAvailabilityZones": {
-        "defaultValue": [],
         "type": "array",
         "metadata": {
           "description": "Specifies the availability zones for the agent nodes in the system node pool. Requirese the use of VirtualMachineScaleSets as node pool type."
@@ -234,7 +226,6 @@
       },
       "applicationGatewayZones": {
         "type": "array",
-        "defaultValue": [],
         "metadata": {
           "description": "Specifies the availability zones of the Application Gateway."
         }
@@ -457,7 +448,6 @@
       "aadProfileConfiguration": {
         "managed": "[parameters('aadProfileManaged')]",
         "enableAzureRBAC": "[parameters('aadProfileEnableAzureRBAC')]",
-        "adminGroupObjectIDs": "[parameters('aadProfileAdminGroupObjectIDs')]",
         "tenantID": "[subscription().tenantId]"
       },
       "nestedtscriptUri": "[uri(parameters('_artifactsLocation'), concat('scripts/k8s_deployment.sh'))]"
@@ -655,9 +645,6 @@
               "[parameters('virtualNetworkAddressPrefixes')]"
             ]
           },
-          "dhcpOptions": {
-            "dnsServers": []
-          },
           "subnets": [
             {
               "name": "[variables('aksSubnetName')]",
@@ -722,7 +709,6 @@
               }
             }
           ],
-          "virtualNetworkPeerings": [],
           "enableDdosProtection": false,
           "enableVmProtection": false
         }
@@ -731,8 +717,7 @@
         "name": "[variables('netAppAccountName')]",
         "type": "Microsoft.NetApp/netAppAccounts",
         "apiVersion": "2022-01-01",
-        "location": "[parameters('location')]",
-        "properties": {}
+        "location": "[parameters('location')]"
       },
       {
         "name": "[variables('capacityPoolName')]",
@@ -851,7 +836,6 @@
           "networkAcls": {
             "bypass": "AzureServices",
             "defaultAction": "Deny",
-            "ipRules": [],
             "virtualNetworkRules": [
               {
                 "id": "[concat(variables('virtualNetworkId'), '/subnets/', variables('virtualMachineSubnetName'))]",
@@ -1002,10 +986,8 @@
           ],
           "backendAddressPools": [
             {
-              "name": "[variables('applicationGatewayBackendAddressPoolName')]",
-              "properties": {
-                "backendAddresses": []
-              }
+              "name": "[variables('applicationGatewayBackendAddressPoolName')]"
+              
             }
           ],
           "backendHttpSettingsCollection": [
@@ -1121,7 +1103,6 @@
               "enableAutoScaling": true,
               "orchestratorVersion": "[parameters('aksClusterKubernetesVersion')]",
               "enableNodePublicIP": false,
-              "nodeLabels": {},
               "mode": "System",
               "enableEncryptionAtHost": false,
               "enableUltraSSD": false,
@@ -1131,7 +1112,6 @@
               "vnetSubnetID": "[variables('aksSubnetId')]",
               "scaleSetPriority": "Regular",
               "scaleSetEvictionPolicy": "Delete",
-              "upgradeSettings": {},
               "availabilityZones": "[parameters('aksNodePoolAvailabilityZones')]"
             },
             {
@@ -1148,7 +1128,6 @@
               "enableAutoScaling": true,
               "orchestratorVersion": "[parameters('aksClusterKubernetesVersion')]",
               "enableNodePublicIP": false,
-              "nodeLabels": {},
               "mode": "User",
               "enableEncryptionAtHost": false,
               "enableUltraSSD": false,
@@ -1157,8 +1136,6 @@
               "enableFIPS": false,
               "vnetSubnetID": "[variables('aksSubnetId')]",
               "scaleSetPriority": "Regular",
-              "scaleSetEvictionPolicy": "Delete",
-              "upgradeSettings": {},
               "availabilityZones": "[parameters('aksNodePoolAvailabilityZones')]"
             }
           ],
@@ -1248,7 +1225,6 @@
           "enableAutoScaling": true,
           "orchestratorVersion": "[parameters('aksClusterKubernetesVersion')]",
           "enableNodePublicIP": false,
-          "nodeLabels": {},
           "mode": "System",
           "enableEncryptionAtHost": false,
           "enableUltraSSD": false,
@@ -1258,7 +1234,6 @@
           "vnetSubnetID": "[variables('aksSubnetId')]",
           "scaleSetPriority": "Regular",
           "scaleSetEvictionPolicy": "Delete",
-          "upgradeSettings": {},
           "availabilityZones": "[parameters('aksNodePoolAvailabilityZones')]"
         }
       },
@@ -1282,7 +1257,6 @@
           "enableAutoScaling": true,
           "orchestratorVersion": "[parameters('aksClusterKubernetesVersion')]",
           "enableNodePublicIP": false,
-          "nodeLabels": {},
           "mode": "User",
           "enableEncryptionAtHost": false,
           "enableUltraSSD": false,
@@ -1292,7 +1266,6 @@
           "vnetSubnetID": "[variables('aksSubnetId')]",
           "scaleSetPriority": "Regular",
           "scaleSetEvictionPolicy": "Delete",
-          "upgradeSettings": {},
           "availabilityZones": "[parameters('aksNodePoolAvailabilityZones')]"
         }
       },
