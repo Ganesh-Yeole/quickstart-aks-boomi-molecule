@@ -224,12 +224,6 @@
           "description": "Specifies persistent volume size"
         }
       },
-      "applicationGatewayZones": {
-        "type": "array",
-        "metadata": {
-          "description": "Specifies the availability zones of the Application Gateway."
-        }
-      },
       "netAppServiceLevel": {
         "defaultValue": "Premium",
         "type": "string",
@@ -904,7 +898,6 @@
             "[variables('applicationGatewayUserDefinedManagedIdentityId')]": {}
           }
         },
-        "zones": "[parameters('applicationGatewayZones')]",
         "properties": {
           "sku": {
             "name": "Standard_v2",
