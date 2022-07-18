@@ -422,7 +422,7 @@
           "BoomiUsername": {
             "value": "[parameters('BoomiUsername')]"
           },
-          "BoomiMFAInstallToken": {
+          "BoomiMFAAPIToken": {
             "value": "[reference('BoomiLicenseValidation').outputs.installationToken.value]"
           },
           "BoomiPassword": {
