@@ -492,13 +492,9 @@
                             "type": "Microsoft.Common.PasswordBox",
                             "label": {
                                 "password": "Boomi AtomSphere API Token",
-                                "confirmPassword": "Confirm Boomi AtomSphere API Token"
-                     
+                                "confirmPassword": "Confirm Boomi AtomSphere API Token"              
                             },
                             "toolTip": "Boomi AtomSphere API token needed when authentication type is Token",
-                            "options": {
-                                "hideConfirmation": false
-                            },
                             "constraints": {
                                 "required": false
                             }
