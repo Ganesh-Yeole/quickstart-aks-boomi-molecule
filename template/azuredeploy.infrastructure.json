@@ -1021,7 +1021,7 @@
                 },
                 "Protocol": "Https",
                 "sslCertificate": {
-                  "id": "[resourceId('Microsoft.Network/applicationGateways/ApplicationGatewaySslCertificate', variables('applicationGatewayName'), variables('applicationGatewaySSLCert'))]"
+                  "id": "[resourceId('Microsoft.Network/applicationGateways/sslCertificates', variables('applicationGatewayName'), variables('applicationGatewaySSLCert')).properties.httpListeners[1].properties.sslCertificate]"
                 }
               }
             }
