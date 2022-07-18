@@ -488,16 +488,17 @@
                         
                     },
                     {
-                            "name": "BoomiMFAAPIToken",
-                            "type": "Microsoft.Common.PasswordBox",
-                            "label": {
-                                "password": "Boomi AtomSphere API Token",
-                                "confirmPassword": "Confirm Boomi AtomSphere API Token"              
-                            },
-                            "toolTip": "Boomi AtomSphere API token needed when authentication type is Token",
-                            "constraints": {
-                                "required": false
-                            }
+                        "name": "BoomiMFAAPIToken",
+                        "type": "Microsoft.Common.PasswordBox",
+                        "label": {
+                            "password": "Boomi AtomSphere API Token",
+                            "confirmPassword": "Confirm Boomi AtomSphere API Token"
+                        },
+                        "toolTip": "Boomi token needed when authentication type is Token",
+                        "constraints": {
+                            "required": false
+                     
+                        }
                                                  
                     },
                     {
