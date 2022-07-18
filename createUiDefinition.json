@@ -162,9 +162,8 @@
                         "toolTip": "Specifies PFX format ssl certificate base64 encoded key data. This ssl certificate will be attached to application gateway",
                             
                         "constraints": {
-                            "required": true,
-                            "regex": "^(?:[A-Za-z\\d+/]{4})*(?:[A-Za-z\\d+/]{3}=|[A-Za-z\\d+/]{2}==)?$",
-                            "validationMessage": "Invalid SSL certificate base64 encoded key data"
+                            "required": true
+                            
                                 }
                         
                     }
