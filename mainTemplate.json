@@ -225,7 +225,6 @@
     },
     "BoomiUsername": {
       "type": "string",
-      "defaultValue": "[string('')]",
       "metadata": {
         "description": "The email account associated with the Boomi account."
       }
