@@ -12,8 +12,8 @@
                 "toolTip": "Specifies the name of the administrator account of the virtual machine.",
                 "constraints": {
                     "required": true,
-                    "regex": "^\\w{6,30}",
-                    "validationMessage": "Username must be between 6 and 30 characters long"
+                    "regex": "^(?=[a-zA-Z0-9._]{6,30}$)(?!.*[_.]{2})[^_.].*[^_.]$",
+                    "validationMessage": "Username must be between 6 and 30 characters long and no special characters allowed"
 
                 }
             },
@@ -483,21 +483,26 @@
                         },
                         "constraints": {
                             "required": false
-                        }
+                        },
+                        "visible": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Password'),true,false)]"
                         
                     },
                     {
                         "name": "BoomiMFAAPIToken",
                         "type": "Microsoft.Common.PasswordBox",
                         "label": {
-                            "password": "Boomi AtomSphere API Token",
-                            "confirmPassword": "Confirm Boomi AtomSphere API Token"
+                        "password": "Boomi AtomSphere API Token",
+                        "confirmPassword": "Confirm Boomi AtomSphere API Token"
                         },
                         "toolTip": "Boomi token needed when authentication type is Token",
+                        "options": {
+                            "hideConfirmation": false
+                        },
                         "constraints": {
                             "required": false
                      
-                        }
+                        },
+                        "visible": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Token'),true,false)]"
                                                  
                     },
                     {
@@ -508,7 +513,7 @@
                         "constraints": {
                             "required": true,
                             "regex": "^\\w{1,25}-\\w{6}$",
-                            "validationMessage": "Account ID must be between 8 and 32 characters long.  It can be found on the Account Information tab in the Setup page."
+                            "validationMessage": "Account ID must be between 8 and 32 characters long. It can be found on the Account Information tab in the Setup page."
                         }
                     },
                     {
@@ -520,7 +525,7 @@
                         "constraints": {
                             "required": true,
                             "regex": "^.{1,255}$",
-                            "validationMessage": "Invalid molecule name"
+                            "validationMessage": "Molecule name must be between 1 and 255 characters long"
                         }
                     }
                 ]            
