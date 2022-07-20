@@ -162,8 +162,8 @@
                         "toolTip": "Specifies PFX format ssl certificate base64 encoded key data. This ssl certificate will be attached to application gateway",         
                         "constraints": {
                             "required": true,
-                             "regex": "/[A-Za-z\\d+/]/",
-                             "validationMessage": "Invalid SSL certificate base64 encoded key data"                          
+                             "regex": "[^]*",
+                             "validationMessage": "Invalid SSL certificate base64 encoded key data"                           
                                 }
                         
                     }
@@ -519,8 +519,8 @@
                         "defaultValue": "Boomi_Molecule_AKS",
                         "constraints": {
                             "required": true,
-                            "regex": "^\\w{1,32}$",
-                            "validationMessage": "Molecule name must be between 1 and 32 characters long."
+                            "regex": "[^]*",
+                            "validationMessage": "Invalid molecule name"
                         }
                     }
                 ]            
