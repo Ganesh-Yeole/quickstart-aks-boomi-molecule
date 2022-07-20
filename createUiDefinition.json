@@ -162,7 +162,7 @@
                         "toolTip": "Specifies PFX format ssl certificate base64 encoded key data. This ssl certificate will be attached to application gateway",         
                         "constraints": {
                             "required": true,
-                             "regex": "[^]*",
+                             "regex": "/[A-Za-z\\d+/]/",
                              "validationMessage": "Invalid SSL certificate base64 encoded key data"                           
                                 }
                         
@@ -519,7 +519,7 @@
                         "defaultValue": "Boomi_Molecule_AKS",
                         "constraints": {
                             "required": true,
-                            "regex": "[^]*",
+                            "regex": "[^]*.{12,72}$",
                             "validationMessage": "Invalid molecule name"
                         }
                     }
@@ -559,8 +559,8 @@
             "BoomiAuthenticationType": "[steps('BoomiConfig').BoomiAuthenticationType]",
             "BoomiAccountID": "[steps('BoomiConfig').BoomiAccountID]",
             "BoomiUsername": "[steps('BoomiConfig').BoomiUsername]",
-            "BoomiPassword": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Password'),steps('BoomiConfig').BoomiPassword,'')]",
-            "BoomiMFAAPIToken": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Token'),steps('BoomiConfig').BoomiMFAAPIToken,'')]",
+            "BoomiPassword": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Password'),steps('BoomiConfig').BoomiPassword,string(''))]",
+            "BoomiMFAAPIToken": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Token'),steps('BoomiConfig').BoomiMFAAPIToken,string(''))]",
             "BoomiMoleculeName": "[steps('BoomiConfig').BoomiMoleculeName]"
 
 
