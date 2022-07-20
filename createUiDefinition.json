@@ -564,8 +564,8 @@
             "BoomiAuthenticationType": "[steps('BoomiConfig').BoomiAuthenticationType]",
             "BoomiAccountID": "[steps('BoomiConfig').BoomiAccountID]",
             "BoomiUsername": "[steps('BoomiConfig').BoomiUsername]",
-            "BoomiPassword": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Password'),steps('BoomiConfig').BoomiPassword,string(''))]",
-            "BoomiMFAAPIToken": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Token'),steps('BoomiConfig').BoomiMFAAPIToken,string(''))]",
+            "BoomiPassword": "[steps('BoomiConfig').BoomiPassword]",
+            "BoomiMFAAPIToken": "[steps('BoomiConfig').BoomiMFAAPIToken]",
             "BoomiMoleculeName": "[steps('BoomiConfig').BoomiMoleculeName]"
 
 
