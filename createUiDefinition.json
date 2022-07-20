@@ -12,8 +12,8 @@
                 "toolTip": "Specifies the name of the administrator account of the virtual machine.",
                 "constraints": {
                     "required": true,
-                    "regex": "^(?=[a-zA-Z0-9._]{6,30}$)(?!.*[_.]{2})[^_.].*[^_.]$",
-                    "validationMessage": "Username must be between 6 and 30 characters long and no special characters allowed"
+                    "regex": "^(?=[a-zA-Z0-9._]{1,15}$)(?!.*[_.]{2})[^_.].*[^_.]$",
+                    "validationMessage": "Username must be between 1 and 15 characters long and no special characters are allowed"
 
                 }
             },
