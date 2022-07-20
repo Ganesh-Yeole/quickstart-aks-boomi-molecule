@@ -159,8 +159,7 @@
                         "name": "sslCertificateSecretData",
                         "type": "Microsoft.Common.TextBox",
                         "label": "Application Gateway SSL Certificate Data",
-                        "toolTip": "Specifies PFX format ssl certificate base64 encoded key data. This ssl certificate will be attached to application gateway",
-                            
+                        "toolTip": "Specifies PFX format ssl certificate base64 encoded key data. This ssl certificate will be attached to application gateway",         
                         "constraints": {
                             "required": true,
                              "regex": "/[A-Za-z\\d+/]/",
@@ -509,7 +508,7 @@
                         "constraints": {
                             "required": true,
                             "regex": "^\\w{1,25}-\\w{6}$",
-                            "validationMessage": "Account ID is not valid. It can be found on the Account Information tab in the Setup page."
+                            "validationMessage": "Account ID must be between 8 and 32 characters long.  It can be found on the Account Information tab in the Setup page."
                         }
                     },
                     {
@@ -520,7 +519,7 @@
                         "defaultValue": "Boomi_Molecule_AKS",
                         "constraints": {
                             "required": true,
-                            "regex": "^\\w{1,32}",
+                            "regex": "^\\w{1,32}$",
                             "validationMessage": "Molecule name must be between 1 and 32 characters long."
                         }
                     }
@@ -560,8 +559,8 @@
             "BoomiAuthenticationType": "[steps('BoomiConfig').BoomiAuthenticationType]",
             "BoomiAccountID": "[steps('BoomiConfig').BoomiAccountID]",
             "BoomiUsername": "[steps('BoomiConfig').BoomiUsername]",
-            "BoomiPassword": "[steps('BoomiConfig').BoomiPassword]",
-            "BoomiMFAAPIToken": "[steps('BoomiConfig').BoomiMFAAPIToken]",
+            "BoomiPassword": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Password'),steps('BoomiConfig').BoomiPassword,'')]",
+            "BoomiMFAAPIToken": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Token'),steps('BoomiConfig').BoomiMFAAPIToken,'')]",
             "BoomiMoleculeName": "[steps('BoomiConfig').BoomiMoleculeName]"
 
 
