@@ -482,7 +482,7 @@
                             "hideConfirmation": false
                         },
                         "constraints": {
-                            "required": false
+                            "required": true
                         },
                         "visible": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Password'),true,false)]"
                         
@@ -499,7 +499,7 @@
                             "hideConfirmation": false
                         },
                         "constraints": {
-                            "required": false
+                            "required": true
                      
                         },
                         "visible": "[if(equals(steps('BoomiConfig').BoomiAuthenticationType,'Token'),true,false)]"
