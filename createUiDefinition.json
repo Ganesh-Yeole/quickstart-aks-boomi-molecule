@@ -553,7 +553,7 @@
             "aksClusterPodCidr": "[steps('KubernetesConfig').aksClusterPodCidr]",
             "aksClusterDockerBridgeCidr": "[steps('KubernetesConfig').aksClusterDockerBridgeCidr]",
             "aksNodePoolAvailabilityZones": "[if(equals(steps('KubernetesConfig').aksNodePoolAvailabilityZones, '1'), parse(concat('[\"', steps('KubernetesConfig').aksNodePoolAvailabilityZones,'\"]')), steps('KubernetesConfig').aksNodePoolAvailabilityZones)]",
-            "userNodePoolAgentCount": "[int(steps('KubernetesConfig').userNodePoolAgentCount)]",
+            "userNodePoolAgentCount": "[string(steps('KubernetesConfig').userNodePoolAgentCount)]",
             "userNodePoolMinCount": "[int(steps('KubernetesConfig').userNodePoolMinCount)]",
             "userNodePoolMaxCount": "[int(steps('KubernetesConfig').userNodePoolMaxCount)]",
             "PodCPUSize": "[steps('KubernetesConfig').PodCPUSize]",
