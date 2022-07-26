@@ -327,9 +327,7 @@
                         "toolTip": "Specifies the number of agents (VMs) to host docker containers in the user node pool. Allowed values must be in the range of 1 to 100 (inclusive). The default value is 3.",
                         "defaultValue": "3",
                         "constraints": {
-                            "required": true,
-                            "regex": "^(?:[1-9]|0[1-9]|10)$",
-                            "validationMessage": "Number of agents should be below 10"
+                            "required": true
                         }
                     },
                     {
