@@ -55,7 +55,7 @@
                         "defaultValue": "10.0.0.0/16",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid Virtual Network Address Prefix"
                                 }
                     },
@@ -67,7 +67,7 @@
                         "defaultValue": "10.0.0.0/18",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid AKS Subnet Address Prefix"
                                 }
                     },
@@ -79,7 +79,7 @@
                         "defaultValue": "10.0.64.0/24",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid Gateway Subnet Address Prefix"
                                 }
                     },
@@ -91,7 +91,7 @@
                         "defaultValue": "10.0.65.0/24",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid Virtual Machine Address Prefix"
                                 }
                     },
@@ -103,8 +103,8 @@
                         "defaultValue": "10.0.66.0/24",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
-                            "validationMessage": "Invalid Subnet Address Prefix"
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
+                            "validationMessage": "Invalid NetApp File Subnet Address Prefix"
                                 }
                     },
                     {
@@ -115,7 +115,7 @@
                         "defaultValue": "0.0.0.0/0",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid Remote Access CIDR"
                                 }
                     },
@@ -249,7 +249,7 @@
                         "defaultValue": "10.0.67.0/24",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid AKS Cluster Service CIDR"
                         }
                     },
@@ -274,7 +274,7 @@
                         "defaultValue": "10.0.0.0/18",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid AKS Cluster Pod CIDR"
                         }
                     },
@@ -286,7 +286,7 @@
                         "defaultValue": "172.17.0.1/16",
                         "constraints": {
                             "required": true,
-                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))",
+                            "regex": "^([0-9]{1,3}\\.){3}[0-9]{1,3}(\/([0-9]|[1-2][0-9]|3[0-2]))?$",
                             "validationMessage": "Invalid AKS Cluster Docker Bridge CIDR"
                         }
                     },              
@@ -327,7 +327,9 @@
                         "toolTip": "Specifies the number of agents (VMs) to host docker containers in the user node pool. Allowed values must be in the range of 1 to 100 (inclusive). The default value is 3.",
                         "defaultValue": "3",
                         "constraints": {
-                            "required": true
+                            "required": true,
+                            "regex": "^[1-9][0-9]?$|^100$",
+                            "validationMessage": "Number of agents should be less than or equal to 100 without leading zeros"
                         }
                     },
                     {
@@ -338,8 +340,8 @@
                         "defaultValue": "3",
                         "constraints": {
                             "required": true,
-                            "regex": "^(?:[1-9]|0[1-9]|10)$",
-                            "validationMessage": "Minimum number of nodes should be below 10"
+                            "regex": "^(?:[1-9]|[1-9]|10)$",
+                            "validationMessage": "Minimum number of nodes should be less than or equal to 10 without leading zeros"
                         }
                     },
                     {
@@ -350,8 +352,8 @@
                         "defaultValue": "10",
                         "constraints": {
                             "required": true,
-                            "regex": "^(?:[1-9]|0[1-9]|10)$",
-                            "validationMessage": "Maximum number of nodes should be below 10"
+                            "regex": "^(?:[1-9]|[1-9]|10)$",
+                            "validationMessage": "Maximum number of nodes should be less than or equal to 10 without leading zeros"
                         }
                     },
                     {
@@ -553,7 +555,7 @@
             "aksClusterPodCidr": "[steps('KubernetesConfig').aksClusterPodCidr]",
             "aksClusterDockerBridgeCidr": "[steps('KubernetesConfig').aksClusterDockerBridgeCidr]",
             "aksNodePoolAvailabilityZones": "[if(equals(steps('KubernetesConfig').aksNodePoolAvailabilityZones, '1'), parse(concat('[\"', steps('KubernetesConfig').aksNodePoolAvailabilityZones,'\"]')), steps('KubernetesConfig').aksNodePoolAvailabilityZones)]",
-            "userNodePoolAgentCount": "[string(steps('KubernetesConfig').userNodePoolAgentCount)]",
+            "userNodePoolAgentCount": "[int(steps('KubernetesConfig').userNodePoolAgentCount)]",
             "userNodePoolMinCount": "[int(steps('KubernetesConfig').userNodePoolMinCount)]",
             "userNodePoolMaxCount": "[int(steps('KubernetesConfig').userNodePoolMaxCount)]",
             "PodCPUSize": "[steps('KubernetesConfig').PodCPUSize]",
