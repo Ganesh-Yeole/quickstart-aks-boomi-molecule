@@ -257,10 +257,10 @@
         }
       },
       "BoomiAuthenticationType": {
-        "defaultValue": "token",
+        "defaultValue": "Token",
         "allowedValues": [
-          "token",
-          "password"
+          "Token",
+          "Password"
         ],
         "type": "string",
         "metadata": {
