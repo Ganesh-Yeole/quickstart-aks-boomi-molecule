@@ -211,10 +211,10 @@
       }
     },
     "BoomiAuthenticationType": {
-      "defaultValue": "token",
+      "defaultValue": "Token",
       "allowedValues": [
-        "token",
-        "password"
+        "Token",
+        "Password"
       ],
       "type": "string",
       "metadata": {
@@ -276,7 +276,7 @@
       }
   },
   "variables": {
-        "nestedtemplatevar": "[concat('template/azuredeploy.infrastructure.json',parameters('_artifactsLocationSasToken'))]",
+        "nestedtemplatevar": "[concat('nestedtemplates/azuredeploy.infrastructure.json',parameters('_artifactsLocationSasToken'))]",
         "nestedtemplateUri": "[uri(parameters('_artifactsLocation'), variables('nestedtemplatevar'))]"
    },
   "resources": [
